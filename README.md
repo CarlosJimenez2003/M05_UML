@@ -10,4 +10,4 @@ Relacions entre classes: Les relacions entre classes, com associacions, composic
 
 Instàncies de classes: S'han creat instàncies de les classes amb valors específics pels atributs, seguint la lògica del model UML.
 
-En resum, la conversió del diagrama UML a Python implica traduir les entitats i relacions del diagrama en classes i atributs en Python, mantenint la lògica i les relacions definides en el model UML.
+La conversió del diagrama UML a Python implica traduir les entitats i relacions del diagrama en classes i atributs en Python, mantenint la lògica i les relacions definides en el model UML.
