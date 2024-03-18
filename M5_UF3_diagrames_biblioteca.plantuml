@@ -1,0 +1,77 @@
+@startuml
+
+class Categoria {
+    - definicio: String
+    + Categoria(definicio: String)
+    + getDefinicio(): String
+}
+
+class Editorial {
+    - nom: String
+    - nacionalitat: String
+    + Editorial(nom: String, nacionalitat: String)
+    + getNom(): String
+    + getNacionalitat(): String
+}
+
+class Autor {
+    - nom: String
+    - dataNaixement: Date
+    + Autor(nom: String, dataNaixement: Date)
+    + getNom(): String
+    + getDataNaixement(): Date
+}
+
+class Llibre {
+    - titol: String
+    - any: int
+    + Llibre(titol: String, any: int)
+    + getTitol(): String
+    + getAny(): int
+}
+
+class Copia {
+    - codi: int
+    - ubicacio: String
+    + Copia(codi: int, ubicacio: String)
+    + getCodi(): int
+    + getUbicacio(): String
+}
+
+class Prestec {
+    - dataInici: Date
+    - dataFinal: Date
+    + Prestec(dataInici: Date, dataFinal: Date)
+    + getDataInici(): Date
+    + getDataFinal(): Date
+}
+
+class Lector {
+    - nom: String
+    - cognoms: String
+    - dni: String
+    - adreca: String
+    + Lector(nom: String, cognoms: String, dni: String, adreca: String)
+    + getNom(): String
+    + getCognoms(): String
+    + getDNI(): String
+    + getAdreca(): String
+}
+
+class Multa {
+    - dataInicial: Date
+    - dataFinal: Date
+    + Multa(dataInicial: Date, dataFinal: Date)
+    + getDataInicial(): Date
+    + getDataFinal(): Date
+}
+
+Categoria "1" -- "*" Llibre
+Editorial "1" -- "*" Llibre
+Autor "1" -- "*" Llibre
+Llibre "1" -- "*" Copia
+Llibre "*" -- "1" Prestec
+Lector "1" -- "*" Prestec
+Lector "1" -- "*" Multa
+
+@enduml
