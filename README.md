@@ -15,3 +15,11 @@ La conversió del diagrama UML a Python implica traduir les entitats i relacions
 
 Activitat 2.2 Biblioteca
 ![alt text](image2.png)
+
+Classes: Les classes en el codi Python són equivalents als blocs de classes definits al diagrama UML.
+
+Atributs: Cadascun dels atributs de les classes al diagrama UML es converteixen en variables dins dels mètodes __init__ de les classes Python.
+
+Mètodes: Cada mètode de les classes al diagrama UML es converteix en un mètode dins de la classe Python. A més, s'afegeixen mètodes accessoris (com get_...) per obtenir els valors dels atributs.
+
+Associacions: Les associacions entre classes es mantenen en el codi Python, però en lloc d'utilitzar noms de variables de tipus, s'utilitzen instàncies d'objectes.
