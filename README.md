@@ -1,6 +1,7 @@
 # M05_UML
 M05_UML Carlos Jiménez Viso 
 ![alt text](image.png)
+
 Classes Python: Cada classe UML s'ha convertit en una classe Python amb els seus respectius atributs i mètodes. Les classes es mantenen bastant semblants a la descripció en UML, amb cada atribut representat com una variable d'instància i cada mètode representat com una funció dins de la classe.
 
 Relacions entre classes: Les relacions entre classes, com associacions, composicions i agregacions, s'han implementat a través dels atributs de les classes. Per exemple, a la classe Factura, l'atribut client és una instància de la classe Client, representant la relació d'associació entre Factura i Client.
