@@ -1,0 +1,29 @@
+@startuml
+left to right direction
+actor Client as g
+
+package Caixer {
+  usecase "Treure Diners" as UC1
+  usecase "Ingresar diners" as UC2
+  usecase "Comprovar Saldo" as UC3
+  usecase "Cambiar Pin" as UC4
+  usecase "Iniciar Sessio" as UC5
+  usecase "Consultar Moviments" as UC6
+  usecase "Administrador de Cuentes" as UC7
+}
+
+
+g --> UC5
+UC5 ..> UC1
+UC5 ..> UC2
+UC5 ..> UC3
+UC5 ..> UC4
+UC5 ..> UC6
+
+
+actor Empleat as e
+e --> UC5 #line:red;line.bold;text:red
+UC5 ..> UC7 #line:red;line.dashed;text:red
+
+
+@enduml
