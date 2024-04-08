@@ -1,0 +1,128 @@
+@startuml
+
+    class Llibre {
+        -Titol: string
+        -Any: date
+        -Categoria: Categoria
+        -Autor: Autor
+        -Editorial: Editorial
+
+
+        + setAny(any: date)
+        + getAny(): date
+        + setTitol(titol: string)
+        + getTitol(): string
+        + setAutor(autor: Autor)
+        + getAutor(): Autor
+        + setCategoria(categoria: Categoria)
+        + getCategoria(): Categoria
+        + setEditorial(editorial: Editorial)
+        + getEditorial(): Editorial
+    }
+
+ class Categoria {
+        -Tipus: string
+        -Definició: string
+
+        + setDefinicio(definicio: string)
+        + getDefinicio(): string
+        + setTipus(tipus: string)
+        + getTipus(): string
+    }
+
+
+
+       class Multa {
+        -DataInici:  date
+        -DataFinalitzacio: date
+        -Lector: Lector
+
+        + setDataFinalitzacio(dataFinalitzacio: date)
+        + getDataFinalitzacio(): date
+        + setDataInici(dataInici: date)
+        + getDataInici(): date
+        + setLector(lector: Lector)
+        + getLector(): Lector
+    }
+
+    class Editorial {
+        -Nom: string
+        -Nacionalitat: string
+
+        + setNom(nom: string)
+        + getNom(): string
+        + setNacionalitat(nacionalitat: string)
+        + getNacionalitat(): string
+    }
+
+   
+
+    class Autor {
+        -Nom: string
+        -DataNaixement: date 
+
+        
+        + setDataNaixement(dataNaixement: date)
+        + getDataNaixement(): date
+        + setNom(nom: string)
+        + getNom(): string
+    }
+
+    class Copia {
+        -CodiCopia: string
+        -Ubicació: string
+
+        + setCodiCopia(codiCopia: string)
+        + getCodiCopia(): string
+        + setUbicacio(ubicacio: string)
+        + getUbicacio(): string
+    }
+
+        class Lector {
+        -Nom: string
+        -Cognoms:  string
+        -DNI: int
+        -Adreça: string
+        -PrestecsActius: Prestec[]
+
+        + setNom(nom: string)
+        + getNom(): string
+        + getAdreca(): string
+        + getPrestecsActius(): Prestec[]
+        + setCognoms(cognoms: string)
+        + getCognoms(): string
+        + setDNI(dni: int)
+        + getDNI(): int
+        + setAdreca(adreca: string)
+
+    }
+
+
+    class Prestec {
+        -DataInici: date
+        -DataFi: date
+        -Llibre: Llibre
+        -Lector: Lector
+
+        + setDataInici(dataInici: date)
+        + getDataInici(): date
+        + setDataFi(dataFi: date)
+        + getDataFi(): date
+        + setLector(lector: Lector)
+        + getLector(): Lector
+        + setLlibre(llibre: Llibre)
+        + getLlibre(): Llibre
+    }
+
+
+ 
+
+    
+    Llibre "1" -- "*" Copia 
+    Llibre "1" -- "*" Categoria 
+    Llibre "1" -- "1" Autor 
+    Llibre "1" -- "1" Editorial 
+    Copia "1" -- "1" Prestec 
+    Lector "1" -- "0--3" Prestec
+    Lector "1" -- "0--1" Multa 
+    @enduml
