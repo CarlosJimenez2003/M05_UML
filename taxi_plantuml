@@ -1,0 +1,34 @@
+@startuml
+
+skinparam actorStyle Hollow
+left to right direction
+
+actor Administratiu as admin
+actor Xofer as driver
+actor Gerent as manager
+
+package Sistema {
+    usecase "Donar d'alta nou client" as alta_client
+    usecase "Donar d'alta reserva" as alta_reserva
+    usecase "Cancelar reserva" as cancelar_reserva
+    usecase "Confirmar reserva" as confirmar_reserva
+    usecase "Consultar reserves" as consultar_reserves
+    usecase "Donar d'alta nou xofer" as alta_xofer
+    usecase "Liquidar comissions" as liquidar_comissions
+
+    admin --> alta_client
+    admin --> alta_reserva
+    admin --> cancelar_reserva
+    admin --> confirmar_reserva
+    manager --> alta_xofer
+    manager --> liquidar_comissions
+    driver --> consultar_reserves
+
+
+    alta_reserva --> "Comprovar disponibilitat del xofer"
+    alta_reserva --> alta_client #line:red; : <<include>> 
+    alta_reserva --> confirmar_reserva #line:red; : <<include>>
+
+}
+
+@enduml
