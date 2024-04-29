@@ -1,0 +1,22 @@
+@startuml
+participant Bar
+participant Sistema
+participant Empleat
+participant Client
+
+Bar -> Sistema: Trucada al nou subministrador
+Sistema -> Sistema: Genera nova fitxa
+Sistema -> Empleat: Sol·licita nom
+Empleat -> Client: Quin és el teu nom?
+Client --> Empleat: Respon
+Empleat -> Sistema: Introdueix nom
+Sistema -> Empleat: Sol·licita cognom
+Empleat -> Client: Quin és el teu cognom?
+Client --> Empleat: Dicta cognom
+Empleat -> Sistema: Introdueix cognom
+Sistema -> Empleat: Sol·licita DNI
+Empleat -> Client: Quin és el teu DNI?
+Client --> Empleat: Proporciona DNI
+Empleat -> Sistema: Introdueix DNI
+Sistema -> Sistema: Guarda registre
+@enduml
